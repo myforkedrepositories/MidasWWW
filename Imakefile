@@ -35,7 +35,7 @@
       XAPPLOADDIR = /usr/local/lib/app-defaults
 #endif
 
-  EXTRA_LIBRARIES = -lMrm -lXm $(DEPLIBS) $(SYSLIBS)
+  EXTRA_LIBRARIES = -lMrm -lXm -lXt -lX11 $(DEPLIBS) $(SYSLIBS)
 
 
 /*

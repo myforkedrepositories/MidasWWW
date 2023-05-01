@@ -707,8 +707,8 @@ char *command;
         MidasDispatchCommand(command);
         NumJump--;
       }
-    else MidasError("Error interpreting command: %s\n       from widget %s (class %s)"
-                    ,command,XtName(ActiveWidget),MidasClassName(ActiveWidget));
+    /*else MidasError("Error interpreting command: %s\n       from widget %s (class %s)"
+                    ,command,XtName(ActiveWidget),MidasClassName(ActiveWidget));*/
 }
 static void midas_command_proc(w,tag,reason)
     Widget w;
@@ -2017,7 +2017,7 @@ char *AppName;
     Temp = MidasGetAppResource(toplevel_widget,"startup");
     /* printf("\nThe startup string is %s\n",Temp.Value.P); */
 
-    if (*Temp.Value.P != '\0') MidasQueueCommand(toplevel_widget,Temp.Value.P);
+    if (*((char*)Temp.Value.P) != '\0') MidasQueueCommand(toplevel_widget,Temp.Value.P);
 }                         
 static MidasOperand MidasQueryUser(w)
 Widget w;
@@ -2502,7 +2502,7 @@ char *argv[];
     Temp = MidasGetAppResource(toplevel_widget,"startup");
     /* printf("\nThe startup string is %s\n",Temp.Value.P); */
 
-    if (*Temp.Value.P != '\0') MidasQueueCommand(toplevel_widget,Temp.Value.P);
+    if (*((char*)Temp.Value.P) != '\0') MidasQueueCommand(toplevel_widget,Temp.Value.P);
     else                       MidasQueueCommand(toplevel_widget,"Midas Popup Midas_Main");
 
 };

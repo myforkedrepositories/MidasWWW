@@ -231,10 +231,10 @@ ActionBlock *MidasPrepareToDispatch(CList,command,delimiters,Argv,Argi,ArgC)
                          if (*entry == '*')
                            {
                              Temp.Value.P = verbVector[i];
-                             if (*Temp.Value.P == '"')
+                             if (*((char*)Temp.Value.P) == '"')
                                {
                                  Temp.Value.P++;
-                                 *(Temp.Value.P+strlen(Temp.Value.P)-1) = '\0';
+                                 *(((char*)Temp.Value.P)+strlen(Temp.Value.P)-1) = '\0';
                                }
                              Temp.Dynamic = FALSE;
                              Temp.Type = MString;
@@ -247,10 +247,10 @@ ActionBlock *MidasPrepareToDispatch(CList,command,delimiters,Argv,Argi,ArgC)
                          if (*entry == '*')
                            {
                              Temp.Value.P = rest;
-                             if (*Temp.Value.P == '"')
+                             if (*((char*)Temp.Value.P) == '"')
                                {
                                  Temp.Value.P++;
-                                 *(Temp.Value.P+strlen(Temp.Value.P)-1) = '\0';
+                                 *(((char*)Temp.Value.P)+strlen(Temp.Value.P)-1) = '\0';
                                }
                              Temp.Dynamic = FALSE;
                              Temp.Type = MString;

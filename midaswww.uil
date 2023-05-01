@@ -1002,8 +1002,8 @@ object
         };
 
 value
-    MidasWWWIcon: exported icon(color_table = color_table(background color = ' ', 
-            foreground color = '*'),
+    StarsCT: color_table(background color = ' ', foreground color = '*');
+    MidasWWWIcon: exported icon(color_table = StarsCT,
         '                  ****************                ',
         ' *****************               *                ',
         ' **               *****************               ',
@@ -1054,14 +1054,15 @@ value
         '  *  *  * ***          ***         * *  *** ***   ',
         '                                                  ',
         '                                                  ');
-    MidasWWWHome: icon(color_table = color_table(background color = ' ', 
+    WWWHomeCT: color_table(background color = ' ', 
             foreground color = '*', 
             rgb(45874,5242,5242) = 'a', 
             rgb(62913,60816,0) = 'b', 
             rgb(0,65535,65535) = 'c', 
             rgb(65535,0,0) = 'd', 
             rgb(61602,60947,60947) = 'e', 
-            rgb(0,41068,155) = 'f'),
+            rgb(0,41068,155) = 'f');
+    MidasWWWHome: icon(color_table = WWWHomeCT,
         '                                                            ',
         '                                                            ',
         '                                                            ',

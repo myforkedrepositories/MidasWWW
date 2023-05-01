@@ -386,7 +386,7 @@ Widget w;
 static char GetCharacter(data)
 DataSource *data;
 {
-  static char response[1024];
+  static char response[1];
 
   if (data->nleft == 0)
     {
@@ -446,7 +446,7 @@ WWWFile *file;
   DataSource data;
   Widget result;
 
-  hp = gethostbyname(node);
+  hp = node ? gethostbyname(node) : 0;
   if (hp == 0)
     {
       sprintf(command,"<h2>Error:</h2>Host %s unknown<p>For more information see <a href=%sunknown_host.html>help</a>.",
